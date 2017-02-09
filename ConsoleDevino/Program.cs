@@ -52,9 +52,7 @@ namespace PeriodsTest
                 Select(p =>
                 { 
 					var begin = p.Start < workTime.Start ? workTime.Start : p.Start;
-                    var end = p.End > workTime.End
-                            ? workTime.End
-                            : p.End > workTime.Start ? p.End : workTime.Start;
+                    var end = p.End > workTime.End ? workTime.End : p.End;
                     return new Period(begin, end);
                 });
         }
